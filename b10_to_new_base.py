@@ -5,11 +5,16 @@ def b10_to_new_base(b10num, newbase):
         b10num = b10num // newbase
     return newstr
 
+def to_b10(binum, base):
+    decimal = 0
+    for digit in binum:
+        decimal = decimal*base + int(digit)
+    return decimal
+
 while True:
     b10 = int(input("Enter a b10 (decimal) number: "))
     base = int(input("Enter a new base: "))
-    print(b10_to_new_base(b10, base))
+    newnum = b10_to_new_base(b10, base)
+    print(newnum)
+    print(to_b10(newnum, base))
 
-def to_b10(binum, newbase):
-    newstr1 = ""
-    
